@@ -199,10 +199,11 @@ public class Parser {
 
     }
 
-    public void converter() throws FileNotFoundException {
-        //for (int i = 0; i < fileList.size(); i++) {
-            //makeArffFiles(fileList.get(i));
-            makeArffFiles("C:\\Users\\Monica\\Documents\\GitHub\\CSVConverter\\src\\csvconverter\\transfusion.data.txt");
+    public void converter(String path) throws FileNotFoundException {
+        listFilesForFolder(new File(path));
+        for (int i = 0; i < fileList.size(); i++) {
+            makeArffFiles(fileList.get(i));
+            //makeArffFiles("C:\\Users\\Monica\\Documents\\GitHub\\CSVConverter\\src\\csvconverter\\transfusion.data.txt");
             //TO DO: CHECK FOR BLANK LINE BETWEEN ATTRIBUTE NAME AND ATTRIBUTE TYPE
             //open and read the specified file    
            // try {
@@ -214,7 +215,7 @@ public class Parser {
 
            // } catch (Exception e) {
            //     System.out.println("There was an issue parsing the file.");
-           // }
+            }
 
        // }
 
